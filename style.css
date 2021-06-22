@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+/* common styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+html{
+    font-size: 62.5%;
+}
+.section-heading{
+    font-size: 10rem;
+    color: #fff;
+    font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: 0.3rem .3rem .3rem #000;
+    text-align: center;
+}
+/* End of commom styles */
+
+/* section 1 */
+.section-1{
+    width: 100%;
+    height: 100vh;
+    background-color: #0f4d94;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section-1-icons i{
+    font-size: 32rem;
+    color: #17c7c7;
+    position: absolute ;
+    transform: translate(-50%, -50%) scale(0);
+    /* text-shadow: 0.2rem 0.2rem 1rem #828da5; */
+    text-shadow: 0.4rem 0.4rem 1rem #000;
+}
+.section-1-icons i.change{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* end of section 1 */  
+/* start of section 2 */ 
+.section-2{
+    width: 100%;
+    height: auto;
+    background-color: #1565C0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6rem 0 10rem 0;
+}
+.card-container{
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    width: 30rem;
+    background-color: #17c7c7;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1rem 1rem 1rem #000;
+    position: relative;
+    transition: transform .5s ,box-shadow .5s;
+}
+.card:hover{
+    transform: translateY(-2rem);
+    box-shadow: 2rem 2rem 2rem #000;
+}
+.card::before{
+    content: '';
+    width: 1rem;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    transform: skewY(45deg);
+    transform-origin: right;
+}
+.card::after{
+    content: '';
+    height: 1rem;
+    width: 100%;
+    background-color: #bcd2d0;
+    position: absolute;
+    left: -.5rem;
+    top: -1rem;
+    transform: skewX(45deg);
+    transform-origin: left;
+}
+.card img{
+    width: 100%;
+}
+.card-name{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin: 2rem 0;
+    color: #111;
+    text-shadow: .2rem .2rem .2rem #ddd;
+}
+.card-btn{
+    background-color: #111;
+    color: #aaa;
+    width: 70%;
+    padding: .6rem 0;
+    font-size: 1.3rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: -.2rem -.2rem .2rem #ddd;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+
+.card-btn:hover{
+    transform: translateY(.5rem);
+    box-shadow: none;
+    background-color: #ddd;
+    color: #111;
+}
+/* end of section 2*/ 
+
+/* Start of section 3 */
+.section-3{
+    width: 100%;
+    height: auto;
+    background-color: #0f4d94;
+    padding: 5rem 0;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5rem;
+}
+.gallery-link{
+    position: relative;
+    margin: 3rem 1rem;
+}
+
+.gallery-link::before{
+    content: '';
+    position: absolute;
+    width: 0; /* 82% on hover*/
+    height: .2rem;
+    background-color: #fff;
+    top: 25%;
+    left: 8%;
+    transition: width 0.5s;
+}
+.gallery-link::after{
+    content: '';
+    position: absolute;
+    height: 0; /* 80% on hover*/
+    width: .2rem;
+    background-color: #fff;
+    top: 10%;
+    left: 80%;
+    transition: height 0.5s;
+}
+.gallery-link:hover::after{
+    height: 80%
+}
+.gallery-link:hover::before{
+    width: 82%;
+    z-index: 10;
+}
+.gallery-link:hover .food-name{
+    width: 100%;
+}
+.gallery-link:hover .food-description{
+    opacity: 1;
+}
+.gallery-link:hover .food-img{
+    box-shadow: .8rem .8rem .1rem #d3f51c, 1.6rem 1.6rem .1rem #e92929, 2.2rem 2.2rem .1rem #fff , 3rem 3rem .1rem #22e0a3;
+    filter: blur(.5rem);
+}
+.gallery-link:hover span.bg{
+    position: absolute;
+    left: 0;
+    height: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+}
+.food-img{
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: .3rem .3rem .1rem #d3f51c, .5rem .5rem .1rem #e92929, .7rem .7rem .1rem #fff , .9rem .9rem .1rem #22e0a3;
+    transition: all 0.5s;
+}
+.food-name{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    width: 0;
+    overflow: hidden;
+    transition: 1s 0.5s;
+    z-index: 5;
+}
+.food-description{
+    width: 70%;
+    position: absolute;
+    top: 8rem;
+    left: 3rem;
+    font-size: 1.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: 1s 0.8s;
+    z-index: 7;
+}
+
+/* end of section 3 */ 
+
+/* Start of section 4  */
+.footer-container{
+    width: 100%;
+    padding: 5rem 0;
+    background-color: #222;
+    color: #fff;
+}
+.section-4-signUp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.signUp-text h3{
+    color:#1565C0;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.2rem; 
+}
+.signUp-text p{
+    color:#aaa;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.1rem; 
+}
+.signUp-input{
+    width: 30rem;
+    height: 4rem;
+    padding: 1rem;
+    border: .2rem solid #1565C0;
+    color: #1565C0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: .4rem;
+}
+.signUp-input::placeholder{
+    color: #1565C0;
+}
+.signUp-btn{
+    position: relative;
+    left: -4.4rem;
+    width: 3.8rem;
+    height: 3.3rem;
+    cursor: pointer;
+    color: #aaa;
+    background-color: #222;
+}
+.footer-copyRight{
+    font-size: 1.5rem;
+    color: #aaa;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* end of section 4 */
+
+
+
+
+
+
+
+@media only screen and (max-width:700px) {
+    .section-4-signUp{
+        flex-direction: column;
+    }
+    .signUp-input{
+        margin-top: 3rem;
+    }
+}
