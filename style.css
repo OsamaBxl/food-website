@@ -110,7 +110,7 @@ html{
   }
   
   .menu.change {
-    top: 15rem;
+    top: 12rem;
     transition: top 0.4s;
   }
   
