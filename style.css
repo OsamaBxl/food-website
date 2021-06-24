@@ -492,7 +492,6 @@ html{
     }
   
     .section-4 {
-      height: 40rem;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
